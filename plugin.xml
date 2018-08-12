@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="vrms.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="vrms.Perspective"
+            name="RCP Perspective"
+            id="vrms.perspective">
+      </perspective>
+   </extension>
+   <extension
+       id="org.eclipse.ui.views"
+       point="org.eclipse.ui.views">
+		<view 
+			class="vrms.ui.views.TestView"
+			id="vrms.ui.views.TestView"
+			name="测试视图" />
+	</extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            name="%productName"
+            application="vrms-rcp.application">
+         <property
+               name="windowImages"
+               value="eclipse16.png,eclipse32.png,eclipse48.png">
+         </property>
+         <property
+               name="appName"
+               value="%productName">
+         </property>
+         <property
+               name="aboutImage"
+               value="eclipse_lg.png">
+         </property>
+         <property
+               name="aboutText"
+               value="%productBlurb">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="e6e8ff">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,265,320,20">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="2,290,450,10">
+         </property>
+      </product>
+   </extension>
+<!--   <extension
+   		 id="vrms.ui.actionset"
+   		 name="菜单扩展"
+         point="org.eclipse.ui.actionSets">
+      <actionSet
+      	description="菜单项"
+      	id="vrms-rcp.menu1"
+      	label="vrms-rcp.menu1"
+      	visible="true">
+      	<action
+      		class="vrms.ui.action.ActionTest"
+      		icon="icons/eclipse16.png"
+      		id="vrms-rcp.actiontest"
+      		label="vrms-rcp.actiontest"
+      		menubarPath ="vrms.ui.menu/additions" 
+      		style ="push"
+      		toolbarPath ="additions" 
+      		tooltip ="第二个菜单项的按钮" />
+      </actionSet>
+   </extension>
+  -->
+</plugin>
